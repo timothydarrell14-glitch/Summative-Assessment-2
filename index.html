@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPA Dictionary</title>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -21,18 +21,18 @@
     </header>
     <main>
         <section>
-            <div>
-              <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word">
+            <div id="search-sec">
+              <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word"><br>
               <button type="submit" id="search">Search</button>
             </div>
-            <div>
+            <div id="new-words">
                 <nav>Different types of words</nav>
             </div>
         </section>
     </main>
-    <section>
+    <section id="output">
         <div>Searched Word</div>
-    <section>
+    <section id="entertain">
         <div>
             <h3>Word of the Day</h3>
             <p>Word</p>
@@ -45,10 +45,10 @@
         </section>
     </section>
     <footer>
-        <p>Website Name</p>
+        <p id="web-name">Website Name</p>
         <ul>
             <li>
-                <p>Phone Number</p>
+                <p id="">Phone Number</p>
             </li>
             <li>
                 <p>About Us</p>

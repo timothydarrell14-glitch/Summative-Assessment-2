@@ -4,6 +4,51 @@
     box-sizing: border-box;
 }
 
-header{
-    color: black;
+body{
+    background-color: beige;
 }
+
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 40px
+}
+
+header nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+main section #search-sec{
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+main section #new-words{
+    display: flex;
+    justify-content: center;
+}
+
+#output div{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#entertain{
+    display: flex;
+    justify-content: center;
+}
+
+#entertain div{
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
