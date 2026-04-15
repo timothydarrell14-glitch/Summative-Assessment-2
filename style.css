@@ -12,11 +12,12 @@ body {
     background-color: antiquewhite;
 }
 
-section {
+#main{
     background-color: #1A365D;
     border-radius: 20px; 
-    padding: 10px;
+    padding: 20px;
 }
+/* Header----------------- */
 
 header {
     display: flex;
@@ -32,44 +33,12 @@ header nav ul {
     gap: 1.4rem;
     font-weight: 300;
 }
+/* Search Section---------------- */
 
 #search-sec {
     display: flex;
     justify-content: center;
     padding: 30px 20px;
-}
-
-#day div {
-    border: none;
-    border-radius: 20px;
-    text-align: center;
-    background-color: antiquewhite;
-}
-
-#entertain div {
-    padding: 20px 20px;
-}
-
-#interest nav {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-footer {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px 10px;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    font-size: x-large;
-}
-
-#search-sec {
     gap: 0.5rem;
 }
 
@@ -79,6 +48,8 @@ footer ul {
     background-color: antiquewhite;
     border: none;
 }
+
+/* Input Field */
 
 input {
     padding: 10px 200px;
@@ -91,6 +62,12 @@ input::placeholder {
     color: black
 }
 
+input:focus{
+    outline: none;
+}
+
+/* History Button */
+
 #history {
     padding: 10px 30px;
     border-radius: 20px;
@@ -98,13 +75,12 @@ input::placeholder {
     border: none;
 }
 
-#words div h4,
-p {
-    padding: 10px 10px;
-}
 
-h2 {
-    padding: 8px 5px;
+
+/* Word of the Day----------------------- */
+
+#entertain div {
+    padding: 20px 20px;
 }
 
 #btn-day {
@@ -114,14 +90,11 @@ h2 {
     border: none;
 }
 
-h2 {
+#d-2{
+    border: none;
+    border-radius: 20px;
     text-align: center;
-    text-decoration: underline;
-
-}
-
-h3 {
-    padding-bottom: 10px;
+    background-color: antiquewhite;
 }
 
 #pronounce {
@@ -129,15 +102,17 @@ h3 {
     justify-content: center;
 }
 
-#pronounce h3 {
+#d-2 h3 {
     padding-left: 10px;
+    color: black;
 }
 
-p {
-    font-weight: 200;
-    font-size: medium;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#d-2 h2{
+    color: black;
+}
 
+#d-2 p{
+    color: black;
 }
 
 #entertain #sym {
@@ -153,7 +128,6 @@ p {
 #entertain #sym nav ul li {
     padding-top: 10px;
     list-style: none;
-
 }
 
 #entertain #sym nav ul li button {
@@ -161,4 +135,56 @@ p {
     padding: 10px 40px;
     border-radius: 20px;
     background-color: silver;
+}
+
+/* Extra--------------------- */
+
+#interest nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+
+/* Footer------------------------------ */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: x-large;
+}
+
+/* Other------------------------------ */
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: silver;
+    padding: 8px 5px;
+    
+}
+
+h3 {
+    padding-bottom: 10px;
+    color: silver;
+}
+
+h4{
+    padding: 10px 10px;
+}
+
+p {
+    font-weight: 200;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: silver;
+    padding: 10px 10px;
 }

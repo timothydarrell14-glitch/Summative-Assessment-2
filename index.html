@@ -11,23 +11,28 @@
 </head>
 
 <body>
-    <section>
-    <header>
-        <h1><i class="fa-solid fa-book-open"></i>MyDictionary</h1>
-        <nav id="nav">
-            <ul>
-                <li>Home</li>
-                <li>Search</li>
-                <li>About</li>
-            </ul>
+    <section id="main">
+        <header>
+            <h1><i class="fa-solid fa-book-open"></i>MyDictionary</h1>
+            <nav id="nav">
+                <ul>
+                    <li aria-label="Home">Home</li>
+                    <li aria-label="Search">Search</li>
+                    <li aria-label="About">About</li>
+                </ul>
 
-        </nav>
-    </header>
-        <div id="search-sec">
-            <button id="history"><i class="fa-solid fa-clock-rotate-left"></i> History</button>
-            <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word"><br>
-            <button type="submit" id="search">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+            </nav>
+        </header>
+        <section>
+            <div id="search-sec">
+            <button id="history" aria-label="Previous Searches"><i class="fa-solid fa-clock-rotate-left"></i>
+                History</button>
+            <input aria-label="Search word" id="search_word" type="text" name="search-word"
+                placeholder="Please Enter Search Word"><br>
+            <button aria-label="Search for word" type="submit" id="search">Search <i
+                    class="fa-solid fa-magnifying-glass"></i></button>
         </div>
+        </section>
         <!-- <div id="output">
         <div>
         <div>
@@ -43,16 +48,15 @@
         </div>
         </div>
     </div> -->
+    <section>
         <div id="entertain">
-            <div id="day">
-                <div>
-                    <span>
+                    <div id="d-2">
                         <div>
                             <h2>Word of the Day</h2>
                         </div>
                         <div id="pronounce">
-                            <button id="btn-day"><i class="fa-solid fa-volume" id="day-pronounce"
-                                    href="pronounce-day"></i>.</button>
+                            <button aria-label="Pronounciation" id="btn-day"><i class="fa-solid fa-volume"
+                                    id="day-pronounce" href="pronounce-day"></i>.</button>
                             <h3>Word</h3>
                             <p>pronounciation typo</p>
                         </div>
@@ -72,38 +76,39 @@
                                 </ul>
                             </nav>
                         </div>
-                    </span>
-                </div>
-            </div>
+        </div>
+    </section>
+        <section id="extra">
             <div id="interest">
-                <h2>Vocabulary Finds</h2>
-                <div>
-                    <nav id="words">
-                        <div>
-                            <h4>Ambigrams</h4>
-                            <p>Definition:</p>
-                            <p>Examples: Madam</p>
-                        </div>
-                        <div>
-                            <h4>Palindrome</h4>
-                            <p>Definition:</p>
-                            <p>Examples: </p>
-                        </div>
-                        <div>
-                            <h4>Semordnilaps</h4>
-                            <p>Definition:</p>
-                            <p>Examples: </p>
-                        </div>
-                        <div>
-                            <h4>Onomatopoeic Palindromes</h4>
-                            <p>Definition:</p>
-                            <p>Examples: </p>
-                        </div>
-                    </nav>
-                </div>
+            <h2>Vocabulary Finds</h2>
+            <div>
+                <nav id="words">
+                    <div>
+                        <h4>Ambigrams</h4>
+                        <p>Definition:</p>
+                        <p>Examples: Madam</p>
+                    </div>
+                    <div>
+                        <h4>Palindrome</h4>
+                        <p>Definition:</p>
+                        <p>Examples: </p>
+                    </div>
+                    <div>
+                        <h4>Semordnilaps</h4>
+                        <p>Definition:</p>
+                        <p>Examples: </p>
+                    </div>
+                    <div>
+                        <h4>Onomatopoeic Palindromes</h4>
+                        <p>Definition:</p>
+                        <p>Examples: </p>
+                    </div>
+                </nav>
             </div>
         </div>
         </div>
+        </div>
+        </section>
         <footer>
             <ul>
                 <li>
