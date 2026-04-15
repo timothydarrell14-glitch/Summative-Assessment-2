@@ -1,81 +1,164 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-body{
-    background-color: beige;
-    border: 10px solid black;
+body {
+    padding: 50px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    background-color: antiquewhite;
 }
 
-header{
+section {
+    background-color: #1A365D;
+    border-radius: 20px; 
+    padding: 10px;
+}
+
+header {
     display: flex;
     justify-content: space-around;
-    padding: 20px 40px;
-    border: 10px solid black;
+    padding: 30px 40px;
+    background-color: #1A365D;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
     gap: 1.4rem;
-    border: 10px solid black;
+    font-weight: 300;
 }
 
-main section #search-sec{
+#search-sec {
     display: flex;
     justify-content: center;
     padding: 30px 20px;
-    border: 10px solid black;
 }
 
-main section #new-words{
-    display: flex;
-    justify-content: center;
-    border: 10px solid black;
-}
-
-#output div{
-    display: flexbox;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    border: 10px solid black;
-}
-
-#entertain{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 0.5fr 0.5fr;
-    border: 10px solid black;
-}
-
-#entertain div{
-    border: 10px solid black;
-}
-
-footer{
-    display: flex;
-    justify-content: space-evenly;
-    border: 10px solid black;
-}
-
-#search-sec{
-    gap: 0.5rem;
-}
-
-#search{
+#day div {
     border: none;
-    padding: 10px 50px;
     border-radius: 20px;
+    text-align: center;
     background-color: antiquewhite;
 }
 
-input{
-    border: none;
-    padding: 10px 200px;
-    border-radius: 20px;
+#entertain div {
+    padding: 20px 20px;
 }
 
+#interest nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: x-large;
+}
+
+#search-sec {
+    gap: 0.5rem;
+}
+
+#search {
+    padding: 12px 40px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+input {
+    padding: 10px 200px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+input::placeholder {
+    color: black
+}
+
+#history {
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+#words div h4,
+p {
+    padding: 10px 10px;
+}
+
+h2 {
+    padding: 8px 5px;
+}
+
+#btn-day {
+    border-radius: 30px;
+    padding: 10px;
+    background-color: silver;
+    border: none;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+h3 {
+    padding-bottom: 10px;
+}
+
+#pronounce {
+    display: flex;
+    justify-content: center;
+}
+
+#pronounce h3 {
+    padding-left: 10px;
+}
+
+p {
+    font-weight: 200;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#entertain #sym {
+    text-align: center;
+}
+
+#entertain #sym nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#entertain #sym nav ul li {
+    padding-top: 10px;
+    list-style: none;
+
+}
+
+#entertain #sym nav ul li button {
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: silver;
+}

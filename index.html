@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <script src="https://kit.fontawesome.com/9c4ac422b2.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
 </head>
+
 <body>
+    <section>
     <header>
         <h1><i class="fa-solid fa-book-open"></i>MyDictionary</h1>
         <nav id="nav">
@@ -17,22 +20,19 @@
                 <li>Search</li>
                 <li>About</li>
             </ul>
-            
+
         </nav>
     </header>
-    <main>
-        <section>
-            <div id="search-sec">
-              <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word"><br>
-              <button type="submit" id="search">Search</button>
-            </div>
-        </section>
-    </main>
-    <section id="output">
+        <div id="search-sec">
+            <button id="history"><i class="fa-solid fa-clock-rotate-left"></i> History</button>
+            <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word"><br>
+            <button type="submit" id="search">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <!-- <div id="output">
         <div>
         <div>
             <h3>Searched Word</h3>
-            <button type="button" class="pronounce"><i class="fa-solid fa-volume"></i>Pronounce</button>
+            <i id="word-pronounce" class="fa-solid fa-volume" href="pronounce-search"></i>
             <p>pronounciation typo</p>
         </div>
         <div>
@@ -42,71 +42,82 @@
             <p>Synonyms</p>
         </div>
         </div>
-    <div>
-        <section id="entertain">
-        <div>
-            <h3>Word of the Day</h3>
-            <button type="button" class="pronounce"><i class="fa-solid fa-volume"></i>Pronounce</button>
-            <div>
-            <p>Definition</p>
-            <nav>synonyms</nav>
+    </div> -->
+        <div id="entertain">
+            <div id="day">
+                <div>
+                    <span>
+                        <div>
+                            <h2>Word of the Day</h2>
+                        </div>
+                        <div id="pronounce">
+                            <button id="btn-day"><i class="fa-solid fa-volume" id="day-pronounce"
+                                    href="pronounce-day"></i>.</button>
+                            <h3>Word</h3>
+                            <p>pronounciation typo</p>
+                        </div>
+                        <div id="defo">
+                            <span>Definition:</span>
+                        </div>
+                        <div id="sym">
+                            <h3>Synonyms</h3>
+                            <nav>
+                                <ul>
+                                    <li><button>tnj</button></li>
+                                    <li><button>kls</button></li>
+                                    <li><button>kfs</button></li>
+                                    <li><button>klf</button></li>
+                                    <li><button>jfk</button></li>
+                                    <li><button>fji</button></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div id="interest">
+                <h2>Vocabulary Finds</h2>
+                <div>
+                    <nav id="words">
+                        <div>
+                            <h4>Ambigrams</h4>
+                            <p>Definition:</p>
+                            <p>Examples: Madam</p>
+                        </div>
+                        <div>
+                            <h4>Palindrome</h4>
+                            <p>Definition:</p>
+                            <p>Examples: </p>
+                        </div>
+                        <div>
+                            <h4>Semordnilaps</h4>
+                            <p>Definition:</p>
+                            <p>Examples: </p>
+                        </div>
+                        <div>
+                            <h4>Onomatopoeic Palindromes</h4>
+                            <p>Definition:</p>
+                            <p>Examples: </p>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
-        <div>
-            <h3>Vocabulary Finds</h3>
-                <nav>
-                    <div>
-                    <ul>
-                        <li>Ambigrams</li>
-                    </ul>
-                    </div>
-                    <div>
-                        <ul>
-                        <li>Palindrome</li>
-                    </ul>
-                    </div>
-                    <div>
-                        <ul>
-                        <li>Semordnilaps</li>
-                    </ul>
-                    </div>
-                    <div>
-                        <ul>
-                        <li>Onomatopoeic Palindromes</li>
-                    </ul>
-                    </div>
-                </nav>
-            </div>
         </div>
-        </section>
-    </div>
+        <footer>
+            <ul>
+                <li>
+                    <nav><i class="fa-brands fa-youtube"></i></nav>
+                </li>
+                <li>
+                    <nav><i class="fa-brands fa-x-twitter"></i></nav>
+                </li>
+                <li>
+                    <nav><i class="fa-solid fa-envelope"></i></nav>
+                </li>
+            </ul>
+        </footer>
     </section>
-    <footer>
-        <p id="web-name">Website Name</p>
-        <ul>
-            <li>
-                <p id="">Phone Number</p>
-            </li>
-            <li>
-                <p>About Us</p>
-            </li>
-            <li>
-                <p>Email</p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <nav><button>yt</button></nav>
-            </li>
-            <li>
-                <nav><button>twitter</button></nav>
-            </li>
-            <li>
-                <nav><button>Email</button></nav>
-            </li>
-        </ul>
-    </footer>
-
-    
 </body>
+
 </html>
