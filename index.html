@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPA Dictionary</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9c4ac422b2.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
 </head>
 <body>
     <header>
-        <h1><i>Icon of website</i>Name of website</h1>
+        <h1><i class="fa-solid fa-book-open"></i>MyDictionary</h1>
         <nav id="nav">
             <ul>
                 <li>Home</li>
@@ -25,24 +26,60 @@
               <input id="search_word" type="text" name="search-word" placeholder="Please Enter Search Word"><br>
               <button type="submit" id="search">Search</button>
             </div>
-            <div id="new-words">
-                <nav>Different types of words</nav>
-            </div>
         </section>
     </main>
     <section id="output">
-        <div>Searched Word</div>
-    <section id="entertain">
+        <div>
+        <div>
+            <h3>Searched Word</h3>
+            <button type="button" class="pronounce"><i class="fa-solid fa-volume"></i>Pronounce</button>
+            <p>pronounciation typo</p>
+        </div>
+        <div>
+            <p>meaning</p>
+        </div>
+            <div>
+            <p>Synonyms</p>
+        </div>
+        </div>
+    <div>
+        <section id="entertain">
         <div>
             <h3>Word of the Day</h3>
-            <p>Word</p>
-            <button type="button" id="pronounce">(Pronounciation)</button>
+            <button type="button" class="pronounce"><i class="fa-solid fa-volume"></i>Pronounce</button>
+            <div>
             <p>Definition</p>
+            <nav>synonyms</nav>
+            </div>
         </div>
         <div>
             <h3>Vocabulary Finds</h3>
+                <nav>
+                    <div>
+                    <ul>
+                        <li>Ambigrams</li>
+                    </ul>
+                    </div>
+                    <div>
+                        <ul>
+                        <li>Palindrome</li>
+                    </ul>
+                    </div>
+                    <div>
+                        <ul>
+                        <li>Semordnilaps</li>
+                    </ul>
+                    </div>
+                    <div>
+                        <ul>
+                        <li>Onomatopoeic Palindromes</li>
+                    </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
         </section>
+    </div>
     </section>
     <footer>
         <p id="web-name">Website Name</p>

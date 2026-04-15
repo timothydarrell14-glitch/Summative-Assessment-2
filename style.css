@@ -6,49 +6,76 @@
 
 body{
     background-color: beige;
+    border: 10px solid black;
 }
 
 header{
     display: flex;
     justify-content: space-around;
-    padding: 20px 40px
+    padding: 20px 40px;
+    border: 10px solid black;
 }
 
 header nav ul{
     display: flex;
     justify-content: center;
     list-style-type: none;
+    gap: 1.4rem;
+    border: 10px solid black;
 }
 
 main section #search-sec{
     display: flex;
     justify-content: center;
-    padding: 10px 10px;
+    padding: 30px 20px;
+    border: 10px solid black;
 }
 
 main section #new-words{
     display: flex;
     justify-content: center;
+    border: 10px solid black;
 }
 
 #output div{
-    display: flex;
-    justify-content: center;
+    display: flexbox;
+    flex-direction: row;
+    align-items: center;
     padding: 20px;
+    border: 10px solid black;
 }
 
 #entertain{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0.5fr 0.5fr;
+    border: 10px solid black;
 }
 
 #entertain div{
-    display: grid;
-    grid-template-rows: 1fr 1fr ;
+    border: 10px solid black;
 }
 
 footer{
     display: flex;
     justify-content: space-evenly;
+    border: 10px solid black;
+}
+
+#search-sec{
+    gap: 0.5rem;
+}
+
+#search{
+    border: none;
+    padding: 10px 50px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+input{
+    border: none;
+    padding: 10px 200px;
+    border-radius: 20px;
 }
 
