@@ -5,6 +5,32 @@
     scroll-behavior: smooth;
 }
 
+/* Other------------------------------ */
+
+h1 {
+    text-align: center;
+    color: silver;
+    padding: 8px 5px;
+}
+
+h3 {
+    padding-bottom: 10px;
+    color: silver;
+}
+
+h2 {
+    padding: 10px 0px;
+    color: silver;
+}
+
+p {
+    font-weight: 200;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    padding: 10px 10px;
+}
+
 body {
     padding: 50px 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,27 +38,34 @@ body {
     background-color: antiquewhite;
 }
 
-#main{
+#main {
     background-color: #1A365D;
-    border-radius: 20px; 
+    border-radius: 20px;
     padding: 20px;
 }
-/* Header----------------- */
+
+/* Header----------------------- */
 
 header {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 30px 40px;
     background-color: #1A365D;
 }
 
-header nav ul {
+header nav{
     display: flex;
     justify-content: center;
-    list-style-type: none;
     gap: 1.4rem;
-    font-weight: 300;
 }
+
+header nav a{
+    font-weight: 300;
+    color: silver;
+    text-decoration: none;
+}
+
 /* Search Section---------------- */
 
 #search-sec {
@@ -49,7 +82,7 @@ header nav ul {
     border: none;
 }
 
-/* Input Field */
+/* Input Field-------------------------- */
 
 input {
     padding: 10px 200px;
@@ -62,11 +95,11 @@ input::placeholder {
     color: black
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-/* History Button */
+/* History Button------------------------ */
 
 #history {
     padding: 10px 30px;
@@ -90,7 +123,7 @@ input:focus{
     border: none;
 }
 
-#d-2{
+#d-2 {
     border: none;
     border-radius: 20px;
     text-align: center;
@@ -107,11 +140,11 @@ input:focus{
     color: black;
 }
 
-#d-2 h2{
+#d-2 h2 {
     color: black;
 }
 
-#d-2 p{
+#d-2 p {
     color: black;
 }
 
@@ -143,9 +176,20 @@ input:focus{
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
 }
 
+#interest nav div{
+    align-items: center;
+}
 
+#interest h1 {
+    padding: 40px 0px;
+}
+
+#interest h2 {
+    padding-left: 20px;
+}
 
 /* Footer------------------------------ */
 
@@ -160,31 +204,4 @@ footer ul {
     display: flex;
     gap: 1.5rem;
     font-size: x-large;
-}
-
-/* Other------------------------------ */
-
-h2 {
-    text-align: center;
-    text-decoration: underline;
-    color: silver;
-    padding: 8px 5px;
-    
-}
-
-h3 {
-    padding-bottom: 10px;
-    color: silver;
-}
-
-h4{
-    padding: 10px 10px;
-}
-
-p {
-    font-weight: 200;
-    font-size: medium;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: silver;
-    padding: 10px 10px;
 }
