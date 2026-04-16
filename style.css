@@ -167,22 +167,23 @@ input:hover {
 #src-wrd{
     padding: 20px;
     margin: 20px;
-    margin: 0px 300px;
+    margin: 0px 30px;
     margin-bottom: 40px;
     border: none;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
+    display: block;
     align-items: center;
-    
+    overflow-x: scroll;
+}
 
+#src-wrd::-webkit-scrollbar{
+    scroll-snap-type: none;
 }
 
 #output{
     background-color: antiquewhite;
     padding: 20px;
     border-radius: 20px;
-    
 }
 
 #output h3{
@@ -209,18 +210,6 @@ input:hover {
     padding: 20px 20px;
 }
 
-#btn-day {
-    border-radius: 30px;
-    padding: 10px;
-    background-color: silver;
-    border: none;
-}
-
-#btn-day:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
 #d-2 {
     border: none;
     border-radius: 20px;
@@ -234,6 +223,8 @@ input:hover {
 }
 
 #d-2 h3 {
+    font-size: large;
+    font-weight: bolder;
     padding-left: 10px;
     color: black;
 }

@@ -45,7 +45,7 @@ b_search.addEventListener('click', async () => {
         let response = await fetch(`${BASE_URL}${input}`)
 
         if (!response.ok) {
-            throw new Error("Network Error")
+            throw new Error("Network Error", error)
         }
 
         let word = await response.json()
@@ -53,18 +53,17 @@ b_search.addEventListener('click', async () => {
         let html =
             `<div id="output">
                 <div>
-                    <div>
+                    
                         <h3>${input}</h3>
-                    </div>
+                    
                     <div id="wrd">
-                        <button id="btn" href="${word[0].phonetics[2].audio}"><i id="word-pronounce" class="fa-solid fa-volume"></i></button>
-                        <p id="ph">${word[0].phonetics[2].text}</p>
-                    </div>
-                    <div>
+                        <p id="ph">${word[0].phonetics[0].text}</p>
+                    
+                    
                         <p id="wrd-def"><em>(${word[0].meanings[0].partOfSpeech})<em> ${word[0].meanings[0].definitions[0].definition}</p>
-                    </div>
-                    <div>
-                        <p id="wrd-ex"><em><b>Example: ${word[0].meanings[0].definitions[0].example}</b><em> </p>
+                    
+                    
+                        <p id="wrd-ex"><em>Example: ${word[0].meanings[0].definitions[0].example}<em> </p>
                     </div>
                 </div>
             </div>`
@@ -72,6 +71,8 @@ b_search.addEventListener('click', async () => {
         document.getElementById('src-wrd').innerHTML += html
 
         input.value = ""
+
+        console.log()
 
     } catch (error) {
         console.error("Error getting word", error)
@@ -81,8 +82,49 @@ b_search.addEventListener('click', async () => {
 
     //          Word of the Day section ---------------------------
 
-    // speech pronounciation function + word pronounciation function + display
+    // speech pronounciation function 
     // random word of the day function + display
+
+const words = [
+  "spring", "garden", "wonder", "planet", "stream", 
+  "marble", "wisdom", "bright", "winter", "market", 
+  "castle", "vivid", "simple", "spirit", "rhythm", 
+  "velvet", "puzzle", "tunnel", "ocean", "frozen", 
+  "hazard", "anchor", "desert", "column", "yellow", 
+  "shadow", "journey", "silver", "mighty", "energy"
+]
+
+    function randomWord(){
+        let c_word = Math.floor(Math.random() * words.length)
+        return words[c_word]
+    }
+
+    document.addEventListener('DOMContentLoaded', async() => {
+
+        let new_word = randomWord()
+
+        try {
+        let response = await fetch(`${BASE_URL}${new_word}`)
+
+        if (!response.ok) {
+            throw new Error("Network Error", error)
+        }
+
+        let word = await response.json()
+
+        newWord = word
+
+        document.getElementById('w-word').innerText += `${newWord[0].word}`
+        document.getElementById('p_pronounce').innerText += `${word[0].phonetics[0].text}`
+        document.getElementById('defo').innerText += `(${word[0].meanings[0].partOfSpeech}), ${word[0].meanings[0].definitions[0].definition}`
+        document.getElementById('example').innerText += `${word[0].meanings[0].definitions[0].example}`
+
+        // console.log(word[0].meanings[0].definitions[0].example)
+
+
+    }catch(error){
+        console.log("Error getting word of the day", error)
+    }})
     // definition funtion + display
     // retrieve 6 synonyms function +display
 
@@ -185,5 +227,7 @@ b_search.addEventListener('click', async () => {
     //         </div>
     //     </div>
     //         </div>
+
+    // AUDIO FUNCTIONALITY TROUBLE
 
 
