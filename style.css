@@ -180,13 +180,14 @@ input:hover {
     scroll-snap-type: none;
 }
 
-#output{
+#src-wrd div{
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
+    margin-top: 15px;
 }
 
-#output h3{
+#src-wrd div h3{
     color: black;
 }
 
@@ -200,6 +201,10 @@ input:hover {
     border: none;
     border-radius: 70px;
     background-color: silver;
+}
+
+select{
+    padding: 1px;
 }
 
 
