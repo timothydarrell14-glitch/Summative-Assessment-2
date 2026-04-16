@@ -23,6 +23,11 @@ h2 {
     color: silver;
 }
 
+h2:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 p {
     font-weight: 200;
     font-size: medium;
@@ -54,13 +59,13 @@ header {
     background-color: #1A365D;
 }
 
-header nav{
+header nav {
     display: flex;
     justify-content: center;
     gap: 1.4rem;
 }
 
-header nav a{
+header nav a {
     font-weight: 300;
     color: silver;
     text-decoration: none;
@@ -82,6 +87,11 @@ header nav a{
     border: none;
 }
 
+#search:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 /* Input Field-------------------------- */
 
 input {
@@ -99,6 +109,11 @@ input:focus {
     outline: none;
 }
 
+input:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 /* History Button------------------------ */
 
 #history {
@@ -106,6 +121,12 @@ input:focus {
     border-radius: 20px;
     background-color: antiquewhite;
     border: none;
+    margin-right: 8px;
+}
+
+#history:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 
@@ -121,6 +142,11 @@ input:focus {
     padding: 10px;
     background-color: silver;
     border: none;
+}
+
+#btn-day:hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 #d-2 {
@@ -170,6 +196,11 @@ input:focus {
     background-color: silver;
 }
 
+#entertain #sym nav ul li button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 /* Extra--------------------- */
 
 #interest nav {
@@ -179,7 +210,8 @@ input:focus {
     align-items: center;
 }
 
-#interest nav div{
+#interest nav div {
+    display: block;
     align-items: center;
 }
 
