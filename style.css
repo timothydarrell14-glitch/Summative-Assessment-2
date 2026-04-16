@@ -125,10 +125,46 @@ input:hover {
     cursor: pointer;
 }
 
+#h-src-wrd{
+    padding: 20px;
+    margin: 20px;
+    margin: 0px 300px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#h-output{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+#h-output h3{
+    color: black;
+}
+
+#h-wrd{
+    display: flex;
+
+}
+
+#h-btn{
+    padding: 10px;
+    border: none;
+    border-radius: 70px;
+    background-color: silver;
+}
+
 /* Search Word Display----------------------- */
 
 #src-wrd{
-    background-color: antiquewhite;
     padding: 20px;
     margin: 20px;
     margin: 0px 300px;
@@ -143,10 +179,14 @@ input:hover {
 }
 
 #output{
-    background-color: #1A365D;
+    background-color: antiquewhite;
     padding: 20px;
     border-radius: 20px;
     
+}
+
+#output h3{
+    color: black;
 }
 
 #wrd{
