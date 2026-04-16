@@ -41,8 +41,6 @@ b_search.addEventListener('click', async () => {
 
     addHistory(input)
 
-    console.log(input)
-
     try {
         let response = await fetch(`${BASE_URL}${input}`)
 
@@ -59,25 +57,21 @@ b_search.addEventListener('click', async () => {
                         <h3>${input}</h3>
                     </div>
                     <div id="wrd">
-                        <button id="btn"><i id="word-pronounce" class="fa-solid fa-volume"
-                                href="pronounce-search"></i>${word.phonetics}</button>
-                        <p id="ph">${word.phonetic}</p>
+                        <button id="btn" href="${word[0].phonetics[2].audio}"><i id="word-pronounce" class="fa-solid fa-volume"></i></button>
+                        <p id="ph">${word[0].phonetics[2].text}</p>
                     </div>
                     <div>
-                        <p id="wrd-def">(${word.meanings})</p>
+                        <p id="wrd-def"><em>(${word[0].meanings[0].partOfSpeech})<em> ${word[0].meanings[0].definitions[0].definition}</p>
                     </div>
                     <div>
-                        <p id="wrd-ex"></p>
+                        <p id="wrd-ex"><em><b>Example: ${word[0].meanings[0].definitions[0].example}</b><em> </p>
                     </div>
                 </div>
             </div>`
 
         document.getElementById('src-wrd').innerHTML += html
 
-        input = ""
-
-        console.log(word)
-        console.log(typeof word)
+        input.value = ""
 
     } catch (error) {
         console.error("Error getting word", error)
