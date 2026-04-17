@@ -227,6 +227,11 @@ select{
     color: black;
 }
 
+#w-word{
+    font-size: larger;
+    font-weight: bold;
+}
+
 #d-2 h2 {
     color: black;
 }

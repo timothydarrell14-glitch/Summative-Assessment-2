@@ -36,14 +36,18 @@ let b_search = document.getElementById('search')
 
 let s_word = document.getElementById('search_word')
 
-b_search.addEventListener('click', async (event) => {
+// let display = document.getElementById('src-wrd').querySelector(".word-pronounce")
 
-    event.preventDefault()
+b_search.addEventListener('click', async () => {
 
     let input = s_word.value
 
+    if(input == ''){
+        return alert("Please enter a word")
+    }
+
     try {
-        let response = await fetch(`${BASE_URL}${input}`)
+        let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`)
 
         if (!response.ok) {
 
@@ -55,7 +59,7 @@ b_search.addEventListener('click', async (event) => {
         let html =
             `<div>
                 <div>
-                <div class="word pronounce">
+                <div class="word-pronounce">
 
                         <audio controls>
                     <source src="${word[0].phonetics[2].audio}" type="audio/mpeg">
@@ -75,11 +79,27 @@ b_search.addEventListener('click', async (event) => {
                 </div>
             </div>`
 
+        //     if(`${word[0].phonetics[2].audio}`== undefined){
+        //     console.log("Audio unavailable")
+        //     return `"Pronouniation unavailable"`
+        // }else if(`${word[0].phonetics[0].text}` == undefined){
+        //     console.log("Phonetic unavailable")
+        //     return null
+        // }else if(`${word[0].meanings[0].partOfSpeech}` == undefined){
+        //     return null
+        // }else if(`${word[0].meanings[0].definitions[0].example}`== undefined){
+        //     return  null
+        // }else if(`${word[0].meanings[0].definitions[0].definition}`=== undefined)
+        //     return `Definition not available`
+
         document.getElementById('src-wrd').innerHTML += html
-        
+
         addHistory([input])
+        s_word.value = ""
+        document.getElementById('src-wrd').innerHTML = ""
         console.log(arr_history)
-        clearData(input, html)
+        // display.value = ""
+
 
         // console.log()
 
@@ -90,8 +110,12 @@ b_search.addEventListener('click', async (event) => {
 
 async function displayWord(input) {
 
+    if(input == ''){
+        return alert("Please enter a word")
+    }
+
     try {
-        let response = await fetch(`${BASE_URL}${input}`)
+        let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`)
 
         if (!response.ok) {
             console.error("Network error")
@@ -99,9 +123,9 @@ async function displayWord(input) {
         let data = await response.json()
 
         let html =
-            `<div>
+            `<div id="clear">
                 <div>
-                        <div class="word pronounce">
+                        <div class="word-pronounce">
                         <h3>${input}</h3>
 
                         <audio controls>
@@ -123,21 +147,33 @@ async function displayWord(input) {
                 </div>
             </div>`
 
-        document.getElementById('src-wrd').innerHTML += html
+        //     if(`${data[0].phonetics[2].audio}`== undefined){
+        //     console.log("Audio unavailable")
+        //     return `"Pronouniation unavailable"`
+        // }else if(`${data[0].phonetics[0].text}` == undefined){
+        //     console.log("Phonetic unavailable")
+        //     return null
+        // }else if(`${data[0].meanings[0].partOfSpeech}` == undefined){
+        //     return null
+        // }else if(`${data[0].meanings[0].definitions[0].example}`== undefined){
+        //     return null
+        // }else if(`${data[0].meanings[0].definitions[0].definition}`=== undefined)
+        //     return `Definition not available`
 
+        document.getElementById('src-wrd').innerHTML = html
         addHistory(input)
+        // s_word.value = ""
+        // display.value = ""
         // console.log(arr_history)
-
-
-
     } catch (error) {
         return alert("Word not found")
     }
 }
 
-let enter = addEventListener('keydown', (event) => {
+    s_word.addEventListener('keydown', (event) => {
+    // console.log(event)
     // console.log(event.key)
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
         // console.log("Enter key pressed")
         let input = s_word.value
         displayWord(input)
@@ -170,31 +206,46 @@ function randomWord() {
 
 document.addEventListener('DOMContentLoaded', async () => {
 
-    let new_word = randomWord()
+    let new_word = randomWord();
 
     try {
-        let response = await fetch(`${BASE_URL}${new_word}`)
+        let response = await fetch(`${BASE_URL}${new_word}`);
 
         if (!response.ok) {
-            throw new Error("Network Error", error)
+            throw new Error("Network Error")
         }
 
         let word = await response.json()
 
         newWord = word
 
-        document.getElementById('w-word').innerText += `${newWord[0].word}`
-        document.getElementById('p_pronounce').innerText += `${word[0].phonetics[0].text}`
-        document.getElementById('defo').innerText += `(${word[0].meanings[0].partOfSpeech}), ${word[0].meanings[0].definitions[0].definition}`
-        document.getElementById('example').innerText += `${word[0].meanings[0].definitions[0].example}`
+        let wWord = `${newWord[0].word}`
+        let pPronounce = `${newWord[0].phonetics[0].text}`
+        let defo = `${newWord[0].meanings[0].definitions[0].definition}`
+        let ex = `${newWord[0].meanings[0].definitions[0].example}`
 
-        // if(`${word[0].meanings[0].definitions[0].example}` == undefined){
-        //     return "No Example present"
-        // }
-
-
+        if(wWord !== undefined){
+            document.getElementById('w-word').innerText += wWord
+        }else{
+            document.getElementById('w-word').innerText += `Unable to display word`
+        }
+        if(pPronounce !== undefined){
+            document.getElementById('p_pronounce').innerText += pPronounce
+        }else{
+            document.getElementById('p_pronounce').innerText += ``
+        }
+        if(defo !== undefined){
+            document.getElementById('defo').innerText += defo
+        }else{
+            document.getElementById('defo').innerText += `Unable to display definition`
+        }
+        if(ex !== undefined){
+            document.getElementById('example').innerText += ex
+        }else{
+            document.getElementById('example').innerText += ``
+        }
     } catch (error) {
-        console.log("Error getting word of the day", error)
+        console.log("Error getting word of the day")
     }
 })
 
