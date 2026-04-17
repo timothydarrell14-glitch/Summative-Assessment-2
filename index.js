@@ -16,15 +16,6 @@ function addHistory(word) {
 g_history.addEventListener('click', () => {
     if (arr_history == []) {
         alert("No History Found")
-        // } else {
-        //     () => {
-        //         arr_history.forEach(function(show){
-        //             let html = 
-        //             `<option>${show}</option>
-        //             `
-        //             document.getElementById('select').innerHTML += html
-        //         })
-        //     }
     }
 })
 
@@ -78,19 +69,6 @@ b_search.addEventListener('click', async () => {
                     </div>
                 </div>
             </div>`
-
-        //     if(`${word[0].phonetics[2].audio}`== undefined){
-        //     console.log("Audio unavailable")
-        //     return `"Pronouniation unavailable"`
-        // }else if(`${word[0].phonetics[0].text}` == undefined){
-        //     console.log("Phonetic unavailable")
-        //     return null
-        // }else if(`${word[0].meanings[0].partOfSpeech}` == undefined){
-        //     return null
-        // }else if(`${word[0].meanings[0].definitions[0].example}`== undefined){
-        //     return  null
-        // }else if(`${word[0].meanings[0].definitions[0].definition}`=== undefined)
-        //     return `Definition not available`
 
         document.getElementById('src-wrd').innerHTML += html
 
@@ -147,19 +125,6 @@ async function displayWord(input) {
                 </div>
             </div>`
 
-        //     if(`${data[0].phonetics[2].audio}`== undefined){
-        //     console.log("Audio unavailable")
-        //     return `"Pronouniation unavailable"`
-        // }else if(`${data[0].phonetics[0].text}` == undefined){
-        //     console.log("Phonetic unavailable")
-        //     return null
-        // }else if(`${data[0].meanings[0].partOfSpeech}` == undefined){
-        //     return null
-        // }else if(`${data[0].meanings[0].definitions[0].example}`== undefined){
-        //     return null
-        // }else if(`${data[0].meanings[0].definitions[0].definition}`=== undefined)
-        //     return `Definition not available`
-
         document.getElementById('src-wrd').innerHTML = html
         addHistory(input)
         // s_word.value = ""
@@ -170,7 +135,7 @@ async function displayWord(input) {
     }
 }
 
-    s_word.addEventListener('keydown', (event) => {
+    s_word.addEventListener('keydown', async (event) => {
     // console.log(event)
     // console.log(event.key)
     if (event.key === "Enter") {
@@ -187,7 +152,6 @@ async function displayWord(input) {
 
 //          Word of the Day section ---------------------------
 
-// speech pronounciation function 
 // random word of the day function + display
 
 const words = [
@@ -335,6 +299,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 //         </div>
 //     </div>
 //         </div>
+
+// } else {
+        //     () => {
+        //         arr_history.forEach(function(show){
+        //             let html = 
+        //             `<option>${show}</option>
+        //             `
+        //             document.getElementById('select').innerHTML += html
+        //         })
+        //     }
+
+        //     if(`${word[0].phonetics[2].audio}`== undefined){
+        //     console.log("Audio unavailable")
+        //     return `"Pronouniation unavailable"`
+        // }else if(`${word[0].phonetics[0].text}` == undefined){
+        //     console.log("Phonetic unavailable")
+        //     return null
+        // }else if(`${word[0].meanings[0].partOfSpeech}` == undefined){
+        //     return null
+        // }else if(`${word[0].meanings[0].definitions[0].example}`== undefined){
+        //     return  null
+        // }else if(`${word[0].meanings[0].definitions[0].definition}`=== undefined)
+        //     return `Definition not available`
+
+        //     if(`${data[0].phonetics[2].audio}`== undefined){
+        //     console.log("Audio unavailable")
+        //     return `"Pronouniation unavailable"`
+        // }else if(`${data[0].phonetics[0].text}` == undefined){
+        //     console.log("Phonetic unavailable")
+        //     return null
+        // }else if(`${data[0].meanings[0].partOfSpeech}` == undefined){
+        //     return null
+        // }else if(`${data[0].meanings[0].definitions[0].example}`== undefined){
+        //     return null
+        // }else if(`${data[0].meanings[0].definitions[0].definition}`=== undefined)
+        //     return `Definition not available`
 
 // AUDIO FUNCTIONALITY TROUBLE
 
