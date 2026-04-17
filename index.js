@@ -76,9 +76,8 @@ b_search.addEventListener('click', async (event) => {
             </div>`
 
         document.getElementById('src-wrd').innerHTML += html
-
-        let history = input
-        addHistory([history])
+        
+        addHistory([input])
         console.log(arr_history)
         clearData(input, html)
 
