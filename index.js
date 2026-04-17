@@ -16,17 +16,19 @@ function addHistory(word) {
 g_history.addEventListener('click', () => {
     if (arr_history == []) {
         alert("No History Found")
-    // } else {
-    //     () => {
-    //         arr_history.forEach(function(show){
-    //             let html = 
-    //             `<option>${show}</option>
-    //             `
-    //             document.getElementById('select').innerHTML += html
-    //         })
-    //     }
-     }
+        // } else {
+        //     () => {
+        //         arr_history.forEach(function(show){
+        //             let html = 
+        //             `<option>${show}</option>
+        //             `
+        //             document.getElementById('select').innerHTML += html
+        //         })
+        //     }
+    }
 })
+
+
 
 //    Search word function (api request) and alert to display  +  search button event + press enter event
 
@@ -34,27 +36,37 @@ let b_search = document.getElementById('search')
 
 let s_word = document.getElementById('search_word')
 
-b_search.addEventListener('click', async () => {
+b_search.addEventListener('click', async (event) => {
 
-    let input = document.getElementById('search_word').value
+    event.preventDefault()
+
+    let input = s_word.value
 
     try {
         let response = await fetch(`${BASE_URL}${input}`)
 
         if (!response.ok) {
-            throw new Error("Network Error", error)
+
+            return alert("Network Error")
         }
+
+        clearData()
 
         let word = await response.json()
 
         let html =
             `<div>
                 <div>
-                    
-                        <h3>${input}</h3>
-                    
+                <div class="word pronounce">
+
+                        <audio controls>
+                    <source src="${word[0].phonetics[2].audio}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                    <h3>${input}</h3>
+                    </div>
                     <div id="wrd">
-                        <p id="ph">${word[0].phonetics[0].text}</p>
+                        <p id="ph">${word[0].phonetics[2].text}</p>
                     
                     
                         <p id="wrd-def"><em>(${word[0].meanings[0].partOfSpeech})<em> ${word[0].meanings[0].definitions[0].definition}</p>
@@ -67,19 +79,76 @@ b_search.addEventListener('click', async () => {
 
         document.getElementById('src-wrd').innerHTML += html
 
-        let history = html
+        let history = input
         addHistory([history])
         console.log(arr_history)
 
-        input = ""
-        s_word = ""
-
-        console.log()
+        // console.log()
 
     } catch (error) {
-        console.error("Error getting word", error)
+        return alert("Definition not available")
     }
 })
+
+async function displayWord(input) {
+
+    try {
+        let response = await fetch(`${BASE_URL}${input}`)
+
+        if (!response.ok) {
+            console.error("Network error")
+        }
+        let data = await response.json()
+
+        let html =
+            `<div>
+                <div>
+                        <div class="word pronounce">
+                        <h3>${input}</h3>
+
+                        <audio controls>
+                    <source src="${data[0].phonetics[2].audio}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                    
+                    </div>
+                    
+                    <div id="wrd">
+                        <p id="ph">${data[0].phonetics[0].text}</p>
+                    
+                    
+                        <p id="wrd-def"><em>(${data[0].meanings[0].partOfSpeech})<em> ${data[0].meanings[0].definitions[0].definition}</p>
+                    
+                    
+                        <p id="wrd-ex"><em>Example: ${data[0].meanings[0].definitions[0].example}<em> </p>
+                    </div>
+                </div>
+            </div>`
+
+        document.getElementById('src-wrd').innerHTML += html
+
+        addHistory(input)
+        // console.log(arr_history)
+
+
+
+    } catch (error) {
+        return alert("Word not found")
+    }
+}
+
+let enter = addEventListener('keydown', (event) => {
+    // console.log(event.key)
+    if (event.key == "Enter") {
+        // console.log("Enter key pressed")
+        let input = s_word.value
+        displayWord(input)
+    }
+})
+
+
+//  input = ""
+//  s_word = ""
 
 
 //          Word of the Day section ---------------------------
@@ -121,7 +190,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('defo').innerText += `(${word[0].meanings[0].partOfSpeech}), ${word[0].meanings[0].definitions[0].definition}`
         document.getElementById('example').innerText += `${word[0].meanings[0].definitions[0].example}`
 
-        // if(`` == undefined){
+        // if(`${word[0].meanings[0].definitions[0].example}` == undefined){
         //     return "No Example present"
         // }
 
@@ -133,13 +202,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-// definition funtion + display
+// definition function + display
 // retrieve 6 synonyms function +display
 
 
 //          Vocab finds section ---------------------------
 
-// extra section filter function + definition + examples +display
+// extra section filter function + definition + examples + display + ------------------- + rotating examples
 
 
 // IDEAS-------------------------------

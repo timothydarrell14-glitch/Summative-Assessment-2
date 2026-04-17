@@ -106,7 +106,7 @@ input:focus {
 }
 
 input:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     cursor: pointer;
 }
 
@@ -117,7 +117,7 @@ input:hover {
     border-radius: 20px;
     background-color: antiquewhite;
     border: none;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 #history:hover {
@@ -153,13 +153,6 @@ input:hover {
 #h-wrd{
     display: flex;
 
-}
-
-#h-btn{
-    padding: 10px;
-    border: none;
-    border-radius: 70px;
-    background-color: silver;
 }
 
 /* Search Word Display----------------------- */
