@@ -78,12 +78,9 @@ b_search.addEventListener('click', async () => {
         console.log(arr_history)
         // display.value = ""
 
-
-        // console.log()
-
     } catch (error) {
         console.error(error)
-        // return alert("Definition not available")
+        return alert("Definition not available")
     }
 })
 
@@ -133,7 +130,7 @@ async function displayWord(input) {
         // console.log(arr_history)
     } catch (error) {
         console.error(error)
-        // return alert("Word not found")
+        return alert("Word not found")
     }
 }
 
