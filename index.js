@@ -50,8 +50,6 @@ b_search.addEventListener('click', async (event) => {
             return alert("Network Error")
         }
 
-        clearData()
-
         let word = await response.json()
 
         let html =
@@ -82,6 +80,7 @@ b_search.addEventListener('click', async (event) => {
         let history = input
         addHistory([history])
         console.log(arr_history)
+        clearData(input, html)
 
         // console.log()
 
