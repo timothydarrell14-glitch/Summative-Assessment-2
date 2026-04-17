@@ -74,7 +74,7 @@ b_search.addEventListener('click', async () => {
 
         addHistory([input])
         s_word.value = ""
-        document.getElementById('src-wrd').innerHTML = ""
+        // document.getElementById('src-wrd').innerHTML = ""
         console.log(arr_history)
         // display.value = ""
 
@@ -82,7 +82,8 @@ b_search.addEventListener('click', async () => {
         // console.log()
 
     } catch (error) {
-        return alert("Definition not available")
+        console.error(error)
+        // return alert("Definition not available")
     }
 })
 
@@ -114,7 +115,7 @@ async function displayWord(input) {
                     </div>
                     
                     <div id="wrd">
-                        <p id="ph">${data[0].phonetics[0].text}</p>
+                        <p id="ph">${data[0].phonetic}</p>
                     
                     
                         <p id="wrd-def"><em>(${data[0].meanings[0].partOfSpeech})<em> ${data[0].meanings[0].definitions[0].definition}</p>
@@ -131,7 +132,8 @@ async function displayWord(input) {
         // display.value = ""
         // console.log(arr_history)
     } catch (error) {
-        return alert("Word not found")
+        console.error(error)
+        // return alert("Word not found")
     }
 }
 
@@ -184,9 +186,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         newWord = word
 
         let wWord = `${newWord[0].word}`
-        let pPronounce = `${newWord[0].phonetics[0].text}`
+        let pPronounce = `${newWord[0].phonetic}`
         let defo = `${newWord[0].meanings[0].definitions[0].definition}`
-        let ex = `${newWord[0].meanings[0].definitions[0].example}`
+        let ex = `Example: ${newWord[0].meanings[0].definitions[0].example}`
 
         if(wWord !== undefined){
             document.getElementById('w-word').innerText += wWord
@@ -206,10 +208,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         if(ex !== undefined){
             document.getElementById('example').innerText += ex
         }else{
-            document.getElementById('example').innerText += ``
+            document.getElementById('example').innerText += `No example available`
         }
     } catch (error) {
-        console.log("Error getting word of the day")
+        console.error("Error getting word of the day", error)
     }
 })
 
